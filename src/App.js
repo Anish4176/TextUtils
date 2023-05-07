@@ -26,18 +26,18 @@ function App() {
   return (
     <>
       {/* <Router> */}
-        <Navbar showAlert={showAlert} title="TextUtils" text="About Me" />
-        <Alert alert={alert} /> {/* pass the alert state as a prop */}
-        <TextForm heading="Enter the text below to analyze:-" showAlert={showAlert} />
-        {/* <Routes>
+      <Navbar showAlert={showAlert} title="TextUtils" text="About Me" />
+      <Alert alert={alert} /> {/* pass the alert state as a prop */}
+      <TextForm heading="Try TextUtils- word counter, character counter :-" showAlert={showAlert} />
+      {/* <Routes>
           <Route exact path="/about" element={<About />}></Route> */}
-          {/* exact is important koiki jb path exact hoga tabhi vo page show krega */}
-          {/* <Route exact path="/" element={<TextForm heading="Enter the text below to analyze:-" showAlert={showAlert} />}></Route> */}
+      {/* exact is important koiki jb path exact hoga tabhi vo page show krega */}
+      {/* <Route exact path="/" element={<TextForm heading="Enter the text below to analyze:-" showAlert={showAlert} />}></Route> */}
 
-          {/* pass the showAlert function as a prop  */}
-        {/* </Routes> */}
-        {/**/}
-        {/* <About /> */}
+      {/* pass the showAlert function as a prop  */}
+      {/* </Routes> */}
+      {/**/}
+      {/* <About /> */}
       {/* </Router> */}
     </>
 

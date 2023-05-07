@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Alert from './Alert';
+// import Alert from './Alert';
 
 export default function TextForm(props) {
 
@@ -56,20 +56,20 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" spellCheck={true} value={text} onChange={handleonchange} id="exampleFormControlTextarea1" rows="8"></textarea>
                 </div>
-                <button className="btn btn-primary mx-1 my-1" onClick={handleClearText}>Clear</button>
-                <button className="btn btn-primary mx-1 my-1" onClick={handleCopyText}>Copy</button>
-                <button className="btn btn-primary mx-1 my-1" onClick={handleUpperText}>Convert to UpperCase</button>
-                <button className="btn btn-primary mx-1 my-1" onClick={handleLowerText}>Convert to LowerCase</button>
-                <button className="btn btn-primary mx-1 my-1" onClick={handleTextToSpeech}>Speak</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearText}>Clear</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopyText}>Copy</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpperText}>Convert to UpperCase</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLowerText}>Convert to LowerCase</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleTextToSpeech}>Speak</button>
             </div>
             <div className="container my-4">
                 <h2> Your Text analysis:-</h2>
-                <p>Number of Words: {text.trim() ? text.trim().split(" ").length : 0} <br />Number of Letters:  {text.length}<br />Time to read: {0.32 * text.trim().split(" ").length} Seconds</p>
+                <p>Number of Words: {text.trim() ? text.trim().split(" ").length : 0} <br />Number of Letters:  {text.length}<br />Time to read: {0.32 * text.trim().split(" ").filter((element)=>{return element.length!==0}).length} Seconds</p>
 
             </div>
             <div className="container my-3">
                 <h2>Preview:-</h2>
-                <p>{text === "" ? "Enter Something in above textbox to preview!" : text} </p>
+                <p>{text === "" ? "Nothing to preview!" : text} </p>
             </div>
 
         </>
